@@ -15,16 +15,14 @@
  * limitations under the License.
  */
 
-package org.gatein.cdi;
-
-import java.io.Serializable;
-
-import org.gatein.api.cdi.context.PortletRedisplayScoped;
+package org.gatein.quickstart.cdi.jsf;
 
 /**
  * @author <a href="http://community.jboss.org/people/kenfinni">Ken Finnigan</a>
  */
-@PortletRedisplayScoped
-public class RedisplayBean extends AbstractBean implements Serializable {
-    private static final long serialVersionUID = 4488694192474531774L;
+public enum IssueStatus {
+
+    NEW,
+    OPEN,
+    CLOSED
 }

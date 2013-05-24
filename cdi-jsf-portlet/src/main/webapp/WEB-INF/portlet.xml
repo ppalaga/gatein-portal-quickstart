@@ -26,7 +26,7 @@
 
         <init-param>
             <name>javax.portlet.faces.defaultViewId.view</name>
-            <value>/home.xhtml</value>
+            <value>/templates/home.xhtml</value>
         </init-param>
         <init-param>
             <name>javax.portlet.faces.preserveActionParams</name>

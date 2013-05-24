@@ -15,39 +15,20 @@
  * limitations under the License.
  */
 
-package org.gatein.cdi;
+package org.gatein.quickstart.cdi.scope;
 
 import javax.inject.Inject;
-import javax.portlet.PortletException;
-import javax.portlet.RenderRequest;
-import javax.portlet.RenderResponse;
-import javax.portlet.filter.FilterChain;
-import javax.portlet.filter.FilterConfig;
-import javax.portlet.filter.RenderFilter;
-import java.io.IOException;
 
 /**
  * @author <a href="http://community.jboss.org/people/kenfinni">Ken Finnigan</a>
  */
-public class CDIFilter implements RenderFilter {
+public class JSPRedisplayPortlet extends JSPAbstractPortlet {
 
     @Inject
-    DataBean bean;
+    RedisplayBean bean;
 
     @Override
-    public void doFilter(RenderRequest request, RenderResponse response, FilterChain chain) throws IOException,
-            PortletException {
-        if (null != bean) {
-            bean.setMessage("Hello from Filter with CDI!");
-        }
-        chain.doFilter(request, response);
-    }
-
-    @Override
-    public void init(FilterConfig filterConfig) throws PortletException {
-    }
-
-    @Override
-    public void destroy() {
+    protected AbstractBean getBean() {
+        return bean;
     }
 }

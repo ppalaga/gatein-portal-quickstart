@@ -15,11 +15,13 @@
  * limitations under the License.
  */
 
-package org.jboss.portletbridge.example.cdi;
+package org.gatein.quickstart.cdi.jsf;
 
 import java.io.Serializable;
 
 /**
+ * A POJO representing an issue in a simple issue tracker.
+ *
  * @author <a href="http://community.jboss.org/people/kenfinni">Ken Finnigan</a>
  */
 public class Issue implements Serializable {

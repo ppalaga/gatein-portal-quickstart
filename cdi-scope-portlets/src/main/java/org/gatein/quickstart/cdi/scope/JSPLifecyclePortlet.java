@@ -15,13 +15,20 @@
  * limitations under the License.
  */
 
-package org.gatein.cdi;
+package org.gatein.quickstart.cdi.scope;
 
-import org.gatein.api.cdi.context.PortletLifecycleScoped;
+import javax.inject.Inject;
 
 /**
  * @author <a href="http://community.jboss.org/people/kenfinni">Ken Finnigan</a>
  */
-@PortletLifecycleScoped
-public class LifecycleBean extends AbstractBean {
+public class JSPLifecyclePortlet extends JSPAbstractPortlet {
+
+    @Inject
+    LifecycleBean bean;
+
+    @Override
+    protected AbstractBean getBean() {
+        return bean;
+    }
 }

@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.gatein.cdi;
+package org.gatein.quickstart.cdi.scope;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.ActionResponse;

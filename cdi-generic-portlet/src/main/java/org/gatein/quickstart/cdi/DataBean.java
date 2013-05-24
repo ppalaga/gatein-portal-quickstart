@@ -15,20 +15,27 @@
  * limitations under the License.
  */
 
-package org.gatein.cdi;
+package org.gatein.quickstart.cdi;
 
-import javax.inject.Inject;
+import javax.enterprise.context.RequestScoped;
 
 /**
+ * A simple bean holding {@link #message} which is changed in {@link CDIFilter} and displayed in {@link GenericCDIPortlet}.
+ * {@link DataBean} is annotated with {@code @RequestScoped} which means that a new instance is created by Java EE Container
+ * for each HTTP request.
+ *
  * @author <a href="http://community.jboss.org/people/kenfinni">Ken Finnigan</a>
  */
-public class JSPLifecyclePortlet extends JSPAbstractPortlet {
+@RequestScoped
+public class DataBean {
 
-    @Inject
-    LifecycleBean bean;
+    private String message = "Hello from CDI!";
 
-    @Override
-    protected AbstractBean getBean() {
-        return bean;
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

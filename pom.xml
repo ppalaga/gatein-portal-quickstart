@@ -130,6 +130,11 @@
         <!-- FIXME: -->
         <gatein.refguide.pbr.url>${gatein.docs.url}/Reference_Guide/chap-Reference_Guide-Building_JSF_Portlets.html</gatein.refguide.pbr.url>
 
+        <gatein.devguide.cdi.url>${gatein.docs.url}/CDI+Portlet+Development</gatein.devguide.cdi.url>
+        <gatein.devguide.cdi.generic.portlet.url>${gatein.docs.url}/Generic+CDI+Portlet</gatein.devguide.cdi.generic.portlet.url>
+        <gatein.devguide.cdi.jsf.portlet.url>${gatein.docs.url}/Using+CDI+and+JSF+in+Portlets</gatein.devguide.cdi.jsf.portlet.url>
+        <gatein.devguide.cdi.scope.portlets.url>${gatein.docs.url}/Using+CDI+Scopes+in+Portlets</gatein.devguide.cdi.scope.portlets.url>
+
         <gatein.refguide.oauth.url>${gatein.docs.url}/OAuth+-+Authentication+with+social+network+accounts</gatein.refguide.oauth.url>
         <gatein.refguide.facebook.url>${gatein.docs.url}/Facebook</gatein.refguide.facebook.url>
         <gatein.refguide.google.url>${gatein.docs.url}/Google+plus</gatein.refguide.google.url>

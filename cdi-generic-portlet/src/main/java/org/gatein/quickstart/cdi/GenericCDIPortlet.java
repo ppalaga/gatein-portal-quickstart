@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.gatein.cdi;
+package org.gatein.quickstart.cdi;
 
 import javax.inject.Inject;
 import javax.portlet.GenericPortlet;
@@ -26,11 +26,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
+ * A minimal Portlet using CDI.
+ *
  * @author <a href="http://community.jboss.org/people/kenfinni">Ken Finnigan</a>
  */
 public class GenericCDIPortlet extends GenericPortlet {
+
+    /**
+     * Java EE Container injects a Request Scoped {@link DataBean} for us here.
+     */
     @Inject
-    DataBean bean;
+    private DataBean bean;
 
     @Override
     protected void doView(RenderRequest request, RenderResponse response) throws PortletException, IOException {

@@ -11,7 +11,7 @@ Target Product: GateIn Portal 3.6
 What is it?
 -----------
 
-This project demonstrates how to use CDI in a JSF 2 portlet.
+This project demonstrates how to use CDI and JSF in portlets.
 
 An introduction and some background information to this quickstart can be found in the following chapters
 of GateIn Portal Developer Guide:
@@ -20,6 +20,8 @@ of GateIn Portal Developer Guide:
 * [Standard Portlet Development (JSR-286)](https://docs.jboss.org/author/display/GTNPORTAL36/Standard+Portlet+Development+%28JSR-286%29)
 * [JSF2 Portlet Development](https://docs.jboss.org/author/display/GTNPORTAL36/JSF2+Portlet+Development)
 * [Basic JSF Portlet Development](https://docs.jboss.org/author/display/GTNPORTAL36/Basic+JSF+Portlet+Development)
+* [CDI Portlet Development](https://docs.jboss.org/author/display/GTNPORTAL36/CDI+Portlet+Development)
+* [Using CDI and JSF in Portlets](https://docs.jboss.org/author/display/GTNPORTAL36/Using+CDI+and+JSF+in+Portlets)
 
 
 <!--~ Included from gatein-portal-quickstarts-parent/src/main/freemarker/include/portlet-general.md.ftl ~-->

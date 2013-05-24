@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.jboss.portletbridge.example.cdi;
+package org.gatein.quickstart.cdi.jsf;
 
 import java.io.Serializable;
 import java.util.ArrayList;

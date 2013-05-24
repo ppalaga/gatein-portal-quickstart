@@ -15,14 +15,13 @@
  * limitations under the License.
  */
 
-package org.jboss.portletbridge.example.cdi;
+package org.gatein.quickstart.cdi.scope;
+
+import org.gatein.api.cdi.context.PortletLifecycleScoped;
 
 /**
  * @author <a href="http://community.jboss.org/people/kenfinni">Ken Finnigan</a>
  */
-public enum IssueStatus {
-
-    NEW,
-    OPEN,
-    CLOSED
+@PortletLifecycleScoped
+public class LifecycleBean extends AbstractBean {
 }

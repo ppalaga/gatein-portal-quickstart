@@ -5,19 +5,21 @@ cdi-generic-portlet: CDI Generic Portlet
 Author: Ken Finnigan  
 Level: Intermediate  
 Technologies: Portlet, CDI  
-Summary: An application that demonstrates use of CDI in a non-JSF portlet.  
+Summary: An application that demonstrates use of CDI in a portlet.  
 Target Product: GateIn Portal 3.6
 
 What is it?
 -----------
 
-This project demonstrates how to use CDI in a non-JSF portlet.
+This project demonstrates how to use CDI in portlets.
 
 An introduction and some background information to this quickstart can be found in the following chapters
 of GateIn Portal Developer Guide:
 
 * [Starting a Portlet Project](https://docs.jboss.org/author/display/GTNPORTAL36/Starting+a+Portlet+Project)
 * [Standard Portlet Development (JSR-286)](https://docs.jboss.org/author/display/GTNPORTAL36/Standard+Portlet+Development+%28JSR-286%29)
+* [CDI Portlet Development](https://docs.jboss.org/author/display/GTNPORTAL36/CDI+Portlet+Development)
+* [Generic CDI Portlet](https://docs.jboss.org/author/display/GTNPORTAL36/Generic+CDI+Portlet)
 
 
 <!--~ Included from gatein-portal-quickstarts-parent/src/main/freemarker/include/portlet-general.md.ftl ~-->

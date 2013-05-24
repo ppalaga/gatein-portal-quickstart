@@ -19,16 +19,16 @@
 
 ${project.artifactId}: ${project.name}
 ============================
-Author: Ken Finnigan  <#-- br -->
-Level: Intermediate  <#-- br -->
-Technologies: Portlet, CDI, JSF  <#-- br -->
-Summary: ${project.description}  <#-- br -->
+Author: Ken Finnigan  <#-- two spaces mean line break in MD -->
+Level: Intermediate  <#-- two spaces mean line break in MD -->
+Technologies: Portlet, CDI, JSF  <#-- two spaces mean line break in MD -->
+Summary: ${project.description}  <#-- two spaces mean line break in MD -->
 Target Product: ${compatibility.portal.projectNameAndVersion}
 
 What is it?
 -----------
 
-This project demonstrates how to use CDI in a JSF 2 portlet.
+This project demonstrates how to use CDI and JSF in portlets.
 
 An introduction and some background information to this quickstart can be found in the following chapters
 of ${compatibility.portal.projectName} Developer Guide:
@@ -39,6 +39,8 @@ of ${compatibility.portal.projectName} Developer Guide:
 <#if compatibility.portal.projectNameShort == "GateIn">
 * [Basic JSF Portlet Development](${gatein.devguide.jsf.basic.portlet.url})
 </#if>
+* [CDI Portlet Development](${gatein.devguide.cdi.url})
+* [Using CDI and JSF in Portlets](${gatein.devguide.cdi.jsf.portlet.url})
 
 
 <#include "/include/portlet-general.md.ftl">

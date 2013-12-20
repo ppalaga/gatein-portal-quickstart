@@ -34,6 +34,8 @@ public class HelloBean implements Serializable {
 
     private static final long serialVersionUID = -6239437588285327644L;
 
+    public static final String DEFAULT_NAME = "World";
+
     /**
      * Stores the name which will be used to greet the application user.
      */
@@ -44,7 +46,7 @@ public class HelloBean implements Serializable {
      */
     @PostConstruct
     public void postContruct() {
-        this.name = "World";
+        this.name = DEFAULT_NAME;
     }
 
     /**

@@ -18,8 +18,11 @@ package org.jboss.quickstarts.portal.navigation;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
 import javax.portlet.GenericPortlet;
 import javax.portlet.PortletException;
 import javax.portlet.RenderRequest;
@@ -62,7 +65,7 @@ public class NavigationPortlet extends GenericPortlet {
 
         PortalRequest portalRequest = PortalRequest.getInstance();
 
-        Navigation navigation = PortalRequest.getInstance().getNavigation();
+        Navigation navigation = portalRequest.getNavigation();
 
         // Diving two levels so the information about children count of children nodes is available
         Node rootNode = navigation.getRootNode(Nodes.visitNodes(2));
@@ -80,7 +83,39 @@ public class NavigationPortlet extends GenericPortlet {
 
         PortletRequestDispatcher prd = getPortletContext().getRequestDispatcher("/jsp/navigation.jsp");
         prd.include(request, response);
+
+        if ("root".equals(portalRequest.getUser().getId())) {
+            getPortletContext().getRequestDispatcher("/jsp/add-node.jsp").include(request, response);
+
+        }
     }
+
+    @Override
+    public void processAction(ActionRequest request, ActionResponse response) throws PortletException, IOException {
+        PortalRequest portalRequest = PortalRequest.getInstance();
+        if ("root".equals(portalRequest.getUser().getId())) {
+            Navigation navigation = portalRequest.getNavigation();
+            String nodeName = request.getParameter("nodeName");
+            String externalURI = request.getParameter("externalURI");
+            if (nodeName != null && externalURI != null) {
+                try {
+                    String openInNewWindow = request.getParameter("openInNewWindow");
+                    Node currentNode = navigation.getNode(portalRequest.getNodePath(), Nodes.visitChildren());
+                    Node newNode = currentNode.addChild(nodeName);
+                    newNode.getAttributes().put("externalURI", externalURI);
+                    newNode.getAttributes().put("openInNewWindow",
+                        openInNewWindow != null && openInNewWindow.length() > 0 ? "true" : "false");
+                    navigation.saveNode(currentNode);
+                    request.setAttribute("nodeManagementMessage", "\""+ nodeName +"\" saved sucessfuly.");
+                } catch (Exception e) {
+                    request.setAttribute("nodeManagementMessage", "Could not save the new node.");
+                    log.log(Level.SEVERE, "Could not save the new node.", e);;
+                }
+            }
+        }
+    }
+
+
 
     /**
      * The serveResource method is used for handling AJAX requests. It's used for the rendering of sub-menus. Anytime

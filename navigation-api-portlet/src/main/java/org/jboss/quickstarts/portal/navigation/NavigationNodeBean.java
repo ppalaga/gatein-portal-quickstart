@@ -19,8 +19,10 @@ package org.jboss.quickstarts.portal.navigation;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
 import org.gatein.api.PortalRequest;
 import org.gatein.api.navigation.Node;
+import org.gatein.api.navigation.NodeAttributes;
 import org.gatein.api.navigation.NodePath;
 import org.gatein.api.navigation.Visibility;
 
@@ -110,6 +112,10 @@ public class NavigationNodeBean {
         return node.getPageId() != null;
     }
 
+    public boolean isValidURI() {
+        return node.getPageId() != null || node.getAttributes().get("externalURI") instanceof String;
+    }
+
     /**
      * Returns true if parent node contains one or more children nodes.
      *
@@ -134,7 +140,23 @@ public class NavigationNodeBean {
      * @return The URI string of the encapsulated node.
      */
     public String getURI() {
-        return node.getURI();
+        NodeAttributes attributes = node.getAttributes();
+        Object externalURI = attributes.get("externalURI");
+        if (externalURI instanceof String) {
+            return (String) externalURI;
+        } else {
+            return node.getURI();
+        }
+    }
+
+    public boolean isOpenInNewWindow() {
+        NodeAttributes attributes = node.getAttributes();
+        Object openInNewWindow = attributes.get("openInNewWindow");
+        if (openInNewWindow instanceof String) {
+            return Boolean.parseBoolean((String) openInNewWindow);
+        } else {
+            return false;
+        }
     }
 
     /**

@@ -43,12 +43,12 @@
     <c:choose>
         <%-- Node is a clickable page and contains children nodes --%>
         <c:when test="${child.validURI && child.parent}">
-            <a href="${child.URI}"><span>${child.name}</span></a><!--
+            <a href="${child.URI}" ${child.openInNewWindow ? "target=\"_blank\"" : ""}><span>${child.name}</span></a><!--
             --><a href="#${ajaxResourceUrl}" class="caret menuhandler"><i>${resourceBundle.getString("label.children")}</i></a>
         </c:when>
         <%-- Node is a clickable page but doesn't contain any children nodes --%>
         <c:when test="${child.validURI && !child.parent}">
-            <a href="${child.URI}"><span>${child.name}</span></a>
+            <a href="${child.URI}" ${child.openInNewWindow ? "target=\"_blank\"" : ""}><span>${child.name}</span></a>
         </c:when>
         <%-- Node is not a clickable page but contains children nodes, it's a "category" node --%>
         <c:when test="${!child.validURI && child.parent}">

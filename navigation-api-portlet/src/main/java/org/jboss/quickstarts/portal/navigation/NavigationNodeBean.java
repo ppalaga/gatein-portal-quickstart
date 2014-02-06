@@ -21,8 +21,8 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.gatein.api.PortalRequest;
+import org.gatein.api.common.Attributes;
 import org.gatein.api.navigation.Node;
-import org.gatein.api.navigation.NodeAttributes;
 import org.gatein.api.navigation.NodePath;
 import org.gatein.api.navigation.Visibility;
 
@@ -34,6 +34,9 @@ import org.gatein.api.navigation.Visibility;
  * @author <a href="mailto:vrockai@redhat.com">Viliam Rockai</a>
  */
 public class NavigationNodeBean {
+
+    public static final org.gatein.api.common.Attributes.Key<Boolean> OPEN_IN_NEW_WINDOW = Attributes.key("openInNewWindow", Boolean.class);
+    public static final org.gatein.api.common.Attributes.Key<String> EXTERNAL_URI = Attributes.key("externalURI", String.class);
 
     private Node node;
 
@@ -113,7 +116,7 @@ public class NavigationNodeBean {
     }
 
     public boolean isValidURI() {
-        return node.getPageId() != null || node.getAttributes().get("externalURI") instanceof String;
+        return node.getPageId() != null || node.getAttributes().get(EXTERNAL_URI) != null;
     }
 
     /**
@@ -140,23 +143,15 @@ public class NavigationNodeBean {
      * @return The URI string of the encapsulated node.
      */
     public String getURI() {
-        NodeAttributes attributes = node.getAttributes();
-        Object externalURI = attributes.get("externalURI");
-        if (externalURI instanceof String) {
-            return (String) externalURI;
-        } else {
-            return node.getURI();
-        }
+        Attributes attributes = node.getAttributes();
+        String externalURI = attributes.get(EXTERNAL_URI);
+        return externalURI != null ? externalURI : node.getURI();
     }
 
     public boolean isOpenInNewWindow() {
-        NodeAttributes attributes = node.getAttributes();
-        Object openInNewWindow = attributes.get("openInNewWindow");
-        if (openInNewWindow instanceof String) {
-            return Boolean.parseBoolean((String) openInNewWindow);
-        } else {
-            return false;
-        }
+        Attributes attributes = node.getAttributes();
+        Boolean openInNewWindow = attributes.get(OPEN_IN_NEW_WINDOW);
+        return openInNewWindow != null && openInNewWindow.booleanValue();
     }
 
     /**

@@ -19,12 +19,12 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>jsf2-hello-world-portlet</artifactId>
+    <artifactId>jsf2-portlet-with-tests</artifactId>
     <groupId>org.jboss.quickstarts.portal</groupId>
-    <name>JSF2 Hello World Portlet</name>
+    <name>JSF2 Portlet with Tests</name>
     <version>6.2.0.build-3-SNAPSHOT</version>
     <packaging>war</packaging>
-    <description>A simple portlet using JavaServer Faces 2.</description>
+    <description>A simple JSF2 portlet with tests.with tests.</description>
     <url>http://www.jboss.org</url>
     <licenses>
         <license>
